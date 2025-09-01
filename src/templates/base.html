@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Saas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %} SaaS {% endblock head_title %}</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    {% include 'base/css.html' %}
 </head>
-<body>
-    <h1>{{ page_title }}</h1>
+<body class="bg-white">
 
-    {% block content %}
+    <!-- Navbar -->
+    {% include 'nav/navbar.html' %}
 
-    fsdfsdf 
+    <!-- Page Content -->
+    <main class="container mx-auto p-4">
+        {% block content %}
+        {% endblock content %}
+    </main>
 
-    {% endblock content%}
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    {% include 'base/js.html' %}
 </body>
 </html>
